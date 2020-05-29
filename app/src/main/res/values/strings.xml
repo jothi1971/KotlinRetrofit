@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">YouTubeDemo</string>
+    <string name="show_all">Show all</string>
+    <string name="show_rent">Rent</string>
+    <string name="show_buy">Buy</string>
+    <string name="type_rent">Rent</string>
+    <string name="type_sale">Sale</string>
+    <string name="display_type">For %s</string>
+    <string name="display_price_monthly_rental">$%,.0f/month</string>
+    <string name="display_price">$%,.0f</string>
+    <string name="profile_button_text">My profile</string>
+    <string name="location_button_text">My location</string>
+    <string name="order_button_text">Order items</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="camera_button_description">Capture Image</string>
+    <string name="file_button_description">Pick image</string>
+    <string name="user_name_title_text">Username</string>
+    <string name="user_name_hint_text">user name</string>
+    <string name="mobile_number_title_text">Mobile number</string>
+    <string name="mobile_number_hint_text">your mobile number</string>
+    <string name="save_profile_button_text">Save profile</string>
+    <string name="login_prompt">Login using firebase</string>
+    <string name="login_button_text">Login</string>
+    <string name="logout_button_text">Logout</string>
+    <string name="latitude_default_text">Latitude : Not available</string>
+    <string name="longitude_default_text">Longitude : Not available</string>
+    <string name="startlocation_button_text">Start location updates</string>
+    <string name="stoplocation_button_text">Stop Location Updates</string>
+    <string name="viewmap_button_text">View Location Map</string>
+    <string name="ok">Ok</string>
+    <string name="fine_location_permission_rationale">requires location permission just for demo</string>
+    <string name="title_activity_maps_temp">Map</string>
+</resources>

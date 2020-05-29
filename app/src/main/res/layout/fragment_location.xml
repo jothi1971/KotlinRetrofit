@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <variable
+            name="locationViewModel"
+            type="com.kottapa.youtubedemo.location.LocationViewModel" />
+    </data>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="location.LocationFragment" >
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/locationLayout"
+    >
+
+    <TextView
+        android:id="@+id/latitude_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@{locationViewModel.latitudeString}"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/longitude_text"
+        app:layout_constraintEnd_toEndOf="@+id/start_updates_button"
+        app:layout_constraintStart_toStartOf="@+id/start_updates_button"
+        />
+    <TextView
+        android:id="@+id/longitude_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:text="@{locationViewModel.longitudeString}"
+        app:layout_constraintBottom_toTopOf="@+id/start_updates_button"
+        app:layout_constraintEnd_toEndOf="@+id/start_updates_button"
+        app:layout_constraintStart_toStartOf="@+id/start_updates_button" />
+    <Button
+        android:id="@+id/start_updates_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:onClick="@{() -> locationViewModel.startLocationUpdates()}"
+        android:text="@string/startlocation_button_text"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+    <Button
+        android:id="@+id/stop_updates_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="@{() -> locationViewModel.stopLocationUpdates()}"
+        android:text="@string/stoplocation_button_text"
+        app:layout_constraintTop_toBottomOf="@id/start_updates_button"
+        app:layout_constraintEnd_toEndOf="@+id/start_updates_button"
+        app:layout_constraintStart_toStartOf="@+id/start_updates_button" />
+    <Button
+        android:id="@+id/view_map_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/viewmap_button_text"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/stop_updates_button"
+        app:layout_constraintEnd_toEndOf="@+id/start_updates_button"
+        app:layout_constraintStart_toStartOf="@+id/start_updates_button"
+         />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+</layout>

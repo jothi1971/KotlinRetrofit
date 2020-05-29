@@ -1,0 +1,17 @@
+
+FAILURE: Build failed with an exception.
+
+* Where:
+Build file '/Users/jothi/Documents/Android/KotlinLearning/YouTubeDemo/app/build.gradle' line: 1
+
+* What went wrong:
+A problem occurred evaluating project ':app'.
+> Failed to apply plugin [id 'com.android.internal.version-check']
+   > Minimum supported Gradle version is 5.6.4. Current version is 5.0. If using the gradle wrapper, try editing the distributionUrl in /Users/jothi/Documents/Android/KotlinLearning/YouTubeDemo/gradle/wrapper/gradle-wrapper.properties to gradle-5.6.4-all.zip
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 3s
