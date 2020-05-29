@@ -43,7 +43,7 @@
                 android:layout_marginTop="16dp"
                 android:textColor="#de000000"
                 android:textSize="39sp"
-                android:text="@{viewModel.itemText}"
+                android:text="@{viewModel.selectedItem.type}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/item_image"
                 tools:text="To Rent" />

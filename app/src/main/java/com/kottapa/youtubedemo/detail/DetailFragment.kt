@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.kottapa.youtubedemo.databinding.FragmentDetailBinding
 
@@ -29,8 +30,8 @@ class DetailFragment : Fragment() {
 
         val item = DetailFragmentArgs.fromBundle(arguments!!).selectedItem
         val viewModelFactory = DetailViewModelFactory(item, application)
-        binding.viewModel = ViewModelProviders.of(
-                this, viewModelFactory).get(DetailViewModel::class.java)
+        binding.viewModel = ViewModelProvider(
+                this,viewModelFactory).get(DetailViewModel::class.java)
 
         return binding.root
     }

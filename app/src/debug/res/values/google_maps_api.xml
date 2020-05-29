@@ -4,8 +4,15 @@
 
     To get one, follow this link, follow the directions and press "Create" at the end:
 
+    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=F2:C9:ED:9A:86:DF:B4:0D:5D:23:6D:02:2A:3F:E9:0E:9A:E1:FF:AE%3Bcom.kottapa.youtubedemo.location
 
     You can also add your credentials to an existing key, using these values:
+
+    Package name:
+    com.kottapa.youtubedemo.location
+
+    SHA-1 certificate fingerprint:
+    F2:C9:ED:9A:86:DF:B4:0D:5D:23:6D:02:2A:3F:E9:0E:9A:E1:FF:AE
 
     Alternatively, follow the directions here:
     https://developers.google.com/maps/documentation/android/start#get-key
@@ -13,5 +20,5 @@
     Once you have your key (it starts with "AIza"), replace the "google_maps_key"
     string in this file.
     -->
-    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">Your map key</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">your map key</string>
 </resources>

@@ -26,7 +26,6 @@ class DetailViewModel(item: Item,
     }
 
 
-    val itemText = item.type
 
 
 }
