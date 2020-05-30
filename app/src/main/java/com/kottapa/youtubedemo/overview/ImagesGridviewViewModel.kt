@@ -16,9 +16,9 @@ import timber.log.Timber
 enum class ApiStatus { LOADING, ERROR, DONE }
 
 /**
- * The [ViewModel] that is attached to the [GridviewFragment].
+ * The [ViewModel] that is attached to the [ImagesGridviewFragment].
  */
-class GridviewViewModel : ViewModel() {
+class ImagesGridviewViewModel : ViewModel() {
 
     // The internal MutableLiveData that stores the status of the most recent request
     private val _status = MutableLiveData<ApiStatus>()

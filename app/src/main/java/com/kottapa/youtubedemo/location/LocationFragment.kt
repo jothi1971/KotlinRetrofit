@@ -14,6 +14,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.app.ActivityCompat
+import androidx.core.content.PermissionChecker
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -27,7 +28,6 @@ import com.kottapa.youtubedemo.databinding.FragmentDetailBinding
 import com.kottapa.youtubedemo.databinding.FragmentLocationBinding
 import com.kottapa.youtubedemo.databinding.FragmentTopBinding
 import com.kottapa.youtubedemo.login.LoginViewModel
-import com.kottapa.youtubedemo.overview.GridViewFragmentDirections
 
 const val REQUEST_LOCATION_PERMISSION_CODE = 11
 
@@ -60,7 +60,19 @@ class LocationFragment : Fragment() {
         binding.viewMapButton.setOnClickListener(){
             Log.v(TAG,"jothi location value " +viewModel.myLatitude.value)
 
-            this.findNavController().navigate(LocationFragmentDirections.actionLocationFragmentToGoogleMapsFragment())
+
+            if (PermissionChecker.checkSelfPermission(
+                    requireContext(),
+                    Manifest.permission.ACCESS_FINE_LOCATION
+                ) ==
+                PermissionChecker.PERMISSION_GRANTED
+            ) {
+                this.findNavController().navigate(LocationFragmentDirections.actionLocationFragmentToGoogleMapsFragment())
+
+            } else {
+                requestPermission()
+            }
+
 
         }
 

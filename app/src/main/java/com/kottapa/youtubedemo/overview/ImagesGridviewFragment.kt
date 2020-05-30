@@ -20,17 +20,17 @@ import com.kottapa.youtubedemo.R
 /**
  * This fragment shows the list of images.
  */
-class GridViewFragment : Fragment() {
+class ImagesGridViewFragment : Fragment() {
 
     companion object {
-        const val TAG = "GridViewFragment"
+        const val TAG = "ImagesGridViewFragment"
     }
 
     private val loginViewModel by activityViewModels<LoginViewModel>()
 
 
 
-    private val gridViewModel by viewModels<GridviewViewModel>()
+    private val gridViewModel by viewModels<ImagesGridviewViewModel>()
 
     /**
      * Inflates the layout with Data Binding, sets its lifecycle owner to the GridviewFragment
@@ -60,13 +60,12 @@ class GridViewFragment : Fragment() {
         gridViewModel.navigateToSelectedItem.observe(this, Observer {item ->
             if ( null != item ) {
                 // Must find the NavController from the Fragment
-                this.findNavController().navigate(GridViewFragmentDirections.actionShowDetail(item))
+                this.findNavController().navigate(ImagesGridViewFragmentDirections.actionShowDetail(item))
                 // Tell the ViewModel we've made the navigate call to prevent multiple navigation
                 gridViewModel.displayItemDetailsComplete()
             }
         })
 
-        setHasOptionsMenu(true)
         return binding.root
     }
 

@@ -11,12 +11,13 @@ Main fragment displays all items in a gridview
     <data>
         <variable
             name="viewModel"
-            type="com.kottapa.youtubedemo.overview.GridviewViewModel" />
+            type="com.kottapa.youtubedemo.overview.ImagesGridviewViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        tools:context="overview.ImagesGridviewFragment"
         >
 
         <androidx.recyclerview.widget.RecyclerView

@@ -10,7 +10,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.firebase.ui.auth.AuthUI
@@ -18,7 +17,6 @@ import com.firebase.ui.auth.IdpResponse
 import com.google.firebase.auth.FirebaseAuth
 import com.kottapa.youtubedemo.databinding.FragmentTopBinding
 import com.kottapa.youtubedemo.login.LoginViewModel
-import com.kottapa.youtubedemo.overview.GridViewFragment
 
 /**
  * A simple [Fragment] subclass.
@@ -32,7 +30,7 @@ class TopFragment : Fragment() {
 
     private lateinit var binding: FragmentTopBinding
 
-    // Get a reference to the ViewModel scoped to this Fragment
+    // Get a reference to the ViewModel
     private val loginViewModel by activityViewModels<LoginViewModel>()
 
     override fun onCreateView(
@@ -51,18 +49,21 @@ class TopFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         observeAuthenticationState()
 
-        binding.downloadButton.setOnClickListener { downloadImages() }
         binding.loginButton.setOnClickListener { launchSignInFlow() }
+        binding.downloadButton.setOnClickListener { downloadImages() }
+        binding.profileButton.setOnClickListener { updateProfile() }
         binding.locationButton.setOnClickListener { displayLocation() }
 
     }
-    /**
-     * Called when the game is finished
-     */
+
     private fun downloadImages() {
 
         val action = TopFragmentDirections.actionTopFragmentToOverviewFragment()
         findNavController().navigate(action)
+    }
+
+    private fun updateProfile() {
+
     }
 
     private fun displayLocation() {
@@ -79,7 +80,7 @@ class TopFragment : Fragment() {
 
         // Create and launch the sign-in intent.
         // We listen to the response of this activity with the
-        // SIGN_IN_REQUEST_CODE.
+        // FIREBASE_SIGN_IN_REQUEST_CODE.
         startActivityForResult(
             AuthUI.getInstance()
                 .createSignInIntentBuilder()
@@ -132,6 +133,7 @@ class TopFragment : Fragment() {
 
                 }
             }
+        //observe authentication state
         loginViewModel.authenticationState.observe(viewLifecycleOwner,stateObserver)
 
 
