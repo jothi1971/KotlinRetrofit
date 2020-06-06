@@ -16,6 +16,8 @@ buildscript {
         version_lifecycle_extensions = "2.2.0"
         version_core = "1.1.0"
         version_google_services = "4.3.0"
+        version_camerax = "1.0.0-beta03"
+        version_material = "1.3.0-alpha01"
 
     }
 

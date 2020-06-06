@@ -40,6 +40,9 @@
         <action
             android:id="@+id/action_topFragment_to_locationFragment"
             app:destination="@id/locationFragment" />
+        <action
+            android:id="@+id/action_topFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -61,6 +64,11 @@
         android:name="com.kottapa.youtubedemo.location.LocationMapFragment"
         android:label="LocationMapFragment"
         tools:layout="@layout/fragment_locationmap"/>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.kottapa.youtubedemo.profile.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile"/>
 
 </navigation>
 
